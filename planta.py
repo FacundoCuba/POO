@@ -1,4 +1,7 @@
 import time
+import random
+
+jardin = {}
 
 class Planta():
     def __init__(self):
@@ -11,21 +14,49 @@ class Planta():
         return total
 
     def condicion(self):
-        if self.ambienteInicial() <= 0:
+        if self.ambienteInicial() + random.choice([-30,-20,-10,0,10,20,30]) <= 0:
             return "muerta"
-        elif self.ambienteInicial() > 0 and self.ambienteInicial() < 10:
+        elif self.ambienteInicial() + random.choice([-30,-20,-10,0,10,20,30]) > 0 and self.ambienteInicial() + random.choice([-30,-20,-10,0,10,20,30]) < 10:
             return "sobreviviendo"
-        elif self.ambienteInicial() >= 10 and self.ambienteInicial() < 100:
+        elif self.ambienteInicial() + random.choice([-30,-20,-10,0,10,20,30]) >= 10 and self.ambienteInicial() + random.choice([-30,-20,-10,0,10,20,30]) < 100:
             return "creciendo"
-        elif self.ambienteInicial() >= 100:
+        elif self.ambienteInicial() + random.choice([-30,-20,-10,0,10,20,30]) >= 100:
             return "reproductiva"
 
+
 girasol = Planta()
-girasol.luz = 0
-girasol.agua = 0
-girasol.nutrientes = 101
+girasol.luz = -10
+girasol.agua = -10
+girasol.nutrientes = -10
+
+rosa = Planta()
+rosa.luz = -10
+rosa.agua = -10
+rosa.nutrientes = -10
+
+tomate = Planta()
+tomate.luz = -10
+tomate.agua = -10
+tomate.nutrientes = -10
+
+lechuga = Planta()
+lechuga.luz = -10
+lechuga.agua = -10
+lechuga.nutrientes = -10
+
+zanahoria = Planta()
+zanahoria.luz = -10
+zanahoria.agua = -10
+zanahoria.nutrientes = -10
+
 while True:
+    jardin['girasol'] = girasol.condicion()
+    jardin['rosa'] = rosa.condicion()
+    jardin['tomate'] = tomate.condicion()
+    jardin['lechuga'] = lechuga.condicion()
+    jardin['zanahoria'] = zanahoria.condicion()
+    print("")
     print("*")
-    print(girasol.condicion())
+    print(jardin)
     time.sleep(3)
 
