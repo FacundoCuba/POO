@@ -25,29 +25,29 @@ class Planta():
 
 
 girasol = Planta()
-girasol.luz = -10
-girasol.agua = -10
-girasol.nutrientes = -10
+girasol.luz = 0
+girasol.agua = 0
+girasol.nutrientes = 0
 
 rosa = Planta()
-rosa.luz = -10
-rosa.agua = -10
-rosa.nutrientes = -10
+rosa.luz = 0
+rosa.agua = 0
+rosa.nutrientes = 0
 
 tomate = Planta()
-tomate.luz = -10
-tomate.agua = -10
-tomate.nutrientes = -10
+tomate.luz = 0
+tomate.agua = 0
+tomate.nutrientes = 0
 
 lechuga = Planta()
-lechuga.luz = -10
-lechuga.agua = -10
-lechuga.nutrientes = -10
+lechuga.luz = 0
+lechuga.agua = 0
+lechuga.nutrientes = 0
 
 zanahoria = Planta()
-zanahoria.luz = -10
-zanahoria.agua = -10
-zanahoria.nutrientes = -10
+zanahoria.luz = 0
+zanahoria.agua = 0
+zanahoria.nutrientes = 0
 
 while True:
     jardin['girasol'] = girasol.condicion()
@@ -55,6 +55,10 @@ while True:
     jardin['tomate'] = tomate.condicion()
     jardin['lechuga'] = lechuga.condicion()
     jardin['zanahoria'] = zanahoria.condicion()
+    stop = {"p1":"muerta", "p2":"muerta", "p3":"muerta", "p4":"muerta","p5":"muerta"}
+    if all(v == "muerta" for v in jardin.values()):
+        exit()
+
     print("")
     print("*")
     print(jardin)
