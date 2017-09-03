@@ -1,15 +1,33 @@
 class Persona():
-    def __init__(self):
-        self.nompre = input("Ingrese su nombre: ")
-        self.dni = input("Ingrese su DNI: ")
+    def __init__(self, nom, doc):
+        self.nompre = nom
+        self.dni = doc
         self.numeroAsignado = 0
 
+    def darNum(self):
+        return self.numeroAsignado
 
 
 class ColaEspera():
-    self.personas = {}
-    def __init__(self,Persona):
-        self.personas[Persona.nompre] = Persona.dni
+    def __init__(self, n):
+        self.pers = []
+        self.cantEnCola = 0
+        self.proxNum = n
+
+    def agregar(self, p):
+        p.numAsignado = self.proxNum
+        self.pers.append(p)
+        aux = p.numAsignado
+        self.proxNum = self.proxNum + 1
+        return aux
+
+    def atenderProx(self):
+        p = self.pers.pop(0)
+        return p.numAsignado
+
+cola = ColaEspera(3)
+n = input("Ingrese su nombre: ")
+d = input("Ingrese su numero de DNI: ")
+print(cola.agregar(Persona(n, d)))
 
 
-#TODO ver imagenes con el codigo
