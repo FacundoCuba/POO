@@ -55,7 +55,6 @@ while True:
     jardin['tomate'] = tomate.condicion()
     jardin['lechuga'] = lechuga.condicion()
     jardin['zanahoria'] = zanahoria.condicion()
-    stop = {"p1":"muerta", "p2":"muerta", "p3":"muerta", "p4":"muerta","p5":"muerta"}
     if all(v == "muerta" for v in jardin.values()):
         exit()
 
