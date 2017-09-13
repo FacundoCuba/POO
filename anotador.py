@@ -17,13 +17,13 @@ class Block:
         self.prox_id = self.prox_id + 1
 
     def modificar(self, id, nota):
-        pass
+        #todo
 
     def buscar(self, id):
-        pass
+        self.notas.index(id + 1)
 
     def borrar(self, id):
-        pass
+        self.notas.remove(id + 1)
 
 class Menu:
     def __init__(self):
@@ -72,19 +72,23 @@ class Menu:
     def agregarNota(self):
         n = Nota()
         n.titulo = input("Ingrese título: ")
-        n.texto = input("Ingrese texto")
+        n.texto = input("Ingrese texto: ")
         n.id = self.miBlock.prox_id
         n.fecha = datetime.datetime.today()
         self.miBlock.agregar(n)
 
     def borrarNota(self):
-        pass
+        id = input("Ingrese el id de la nota a borrar: ")
+        self.miBlock.borrar(id)
 
     def modificarNota(self):
-        pass
+        id = input("Ingrese el id de la nota a modificar: ")
+        self.miBlock.modificar(id,n)
+        #todo
 
     def buscarNota(self):
-        pass
+        id = input("Ingrese el id de la nota a buscar: ")
+        self.miBlock.buscar(id)
 
 if __name__ == '__main__':
     mnu = Menu()
