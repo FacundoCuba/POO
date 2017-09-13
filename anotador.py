@@ -17,6 +17,9 @@ class Block:
         self.prox_id = self.prox_id + 1
 
     def modificar(self, id, nota):
+        self.notas.remove(id)
+        nota.id = id
+        self.notas.append(nota)
         #todo
 
     def buscar(self, id):
@@ -83,6 +86,12 @@ class Menu:
 
     def modificarNota(self):
         id = input("Ingrese el id de la nota a modificar: ")
+        print("")
+        print(n.titulo)
+        print(n.texto)
+        n = Nota()
+        n.titulo = input("Ingrese título: ")
+        n.texto = input("Ingrese texto: ")
         self.miBlock.modificar(id,n)
         #todo
 
